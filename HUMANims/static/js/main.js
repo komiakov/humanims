@@ -1,5 +1,6 @@
 const { createApp, ref } = Vue
 import HmnButton from "./components/HmnButton.js"; // Импорт компонента
+import HmnInput from "./components/HmnInput.js"; // Импорт компонента
 
 const app = Vue.createApp({
     setup() {
@@ -13,7 +14,8 @@ const app = Vue.createApp({
         };
     },
     components: {
-        "hmn-button": HmnButton
+        "hmn-button": HmnButton,
+        "hmn-input": HmnInput,
     }
 });
 

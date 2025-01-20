@@ -12,7 +12,8 @@ export default {
     },
 
     template: `
-        <a :href="href || '#'" @click="handleClick">
+        <a :href="href || '#'" @click="handleClick" class="hmnButton">
+            <slot></slot>
             <span v-if=text>{{text}}</span>
         </a>
     `
