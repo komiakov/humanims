@@ -11,3 +11,6 @@ def reportsView(request):
 
 def settingsView(request):
     return render(request, 'basic/settings.html')
+
+def databasesCreateNewView(request):
+    return render(request, 'basic/databasesCreateNew.html')

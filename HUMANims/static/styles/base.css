@@ -4,6 +4,7 @@
     --main-dark-color: #20262B;
     --accent-color: #ACC3C2;
     --main-font-color: #000000;
+    --alert-color: #FF5947;
 }
 
 a{
@@ -61,7 +62,7 @@ a{
         z-index: 1;
         position: fixed;top: 0; left: -600px;
         display: grid;align-content: space-between; grid-template-rows: auto auto 1fr; gap: 24px;
-        height: 100vh;
+        height: 100vh; overflow: hidden;
         padding: 12px;
         background-color: var(--accent-color);
         transition: 0.3s;
@@ -73,45 +74,24 @@ a{
                 font-weight: 500; font-size: 18px;
             }
         }
+
+        #sidebarContentBlock{
+            max-height: 100%; overflow: hidden;
+            #addColumnButton{
+                width: 100%; display: flex; justify-content: center !important;
+            }
+            #sidebarContentBlockScrolledBlock{
+                display: grid; gap: 12px;
+                margin-top: 12px;
+                flex-grow: 1;
+                padding-bottom: 12px;
+                max-height: 93%; overflow-y: auto;
+            }
+        }
     }
     #sidebar.visible{
         top: 0; left: 60px;
         transition: 0.3s;
-    }
-}
-
-.hmnButton{
-    display: inline-flex; align-items: center;
-    height: 36px;
-    padding: 6px;
-    border-radius: 6px;
-    font-size: 12px;
-}
-
-.hmnButton.primary{
-    color: white;
-    background-color: var(--main-dark-color);
-    svg{
-        path{
-            fill: var(--accent-color);
-        }
-    }
-    span{
-        padding: 0 12px;
-        font-weight: 500;
-    }
-}
-
-.hmnInput{
-    display: flex; align-items: center; gap: 6px;
-    width: 100%;
-    padding: 5px;
-    border: 1px dashed var(--main-dark-color); border-radius: 6px;
-    input{
-        width: 100%;
-        border: none; outline: none;
-        background-color: transparent; 
-        font-size: 14px; font-weight: 300;
     }
 }
 
@@ -126,3 +106,25 @@ a{
         width: 320px;
     }
 }
+
+/* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
+/** {
+  scrollbar-width: thin;
+  scrollbar-color: #20262B #9CB9D2;
+}*/
+
+
+  
+  .no-results{
+    display: grid;justify-content: center; justify-items: center;
+    svg{
+        width: 72px; height: 72px;
+        path{
+            fill: var(--main-dark-color)
+        }
+    }
+    span{
+        margin-top: 12px;
+        font-size: 18px; font-weight: 300; color: var(--main-font-color); opacity: 0.5;
+    }
+  }

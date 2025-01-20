@@ -5,14 +5,11 @@ export default {
     },
 
     methods: {
-        handleClick(event) {
-            event.preventDefault();
-            console.log("Кнопка нажата!");
-        }
+       
     },
 
     template: `
-        <a :href="href || '#'" @click="handleClick" class="hmnButton">
+        <a :href="href || '#'" class="hmnButton">
             <slot></slot>
             <span v-if=text>{{text}}</span>
         </a>

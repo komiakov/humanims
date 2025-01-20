@@ -1,0 +1,47 @@
+{% extends "basic/base.html" %}
+
+{% load static %}
+
+{% block pageName %}Databases{% endblock %}
+
+{% block staticFiles %}
+<link rel="stylesheet" href="{% static 'styles/components/HmnColumn.css' %}" />
+{% endblock %}
+
+{% block sidebar %}
+    <div id="sidebarPageName">
+        <p>Creating database</p>
+
+        <hmn-button text="Save" class="primary">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.4" d="M20.27 17.19C19.27 18.1 17.98 18.6 16.63 18.59H16.54C16.84 17.97 17 17.27 17 16.53C17 13.77 14.76 11.53 12 11.53C9.23999 11.53 6.99999 13.77 6.99999 16.53C6.99999 17.27 7.16001 17.97 7.46001 18.59H5.53997C0.859968 18.26 0.859968 11.45 5.53997 11.12H5.59002C2.38002 2.19 15.92 -1.38 17.47 8C21.8 8.55 23.55 14.32 20.27 17.19Z" fill="#292D32"/>
+                <path d="M12 11.53C9.24 11.53 7 13.77 7 16.53C7 17.27 7.16002 17.97 7.46002 18.59C7.54002 18.77 7.62998 18.94 7.72998 19.1C8.58998 20.55 10.18 21.53 12 21.53C13.82 21.53 15.41 20.55 16.27 19.1C16.37 18.94 16.46 18.77 16.54 18.59C16.84 17.97 17 17.27 17 16.53C17 13.77 14.76 11.53 12 11.53ZM14.07 16.1L11.94 18.07C11.8 18.2 11.61 18.27 11.43 18.27C11.24 18.27 11.05 18.2 10.9 18.05L9.90997 17.06C9.61997 16.77 9.61997 16.29 9.90997 16C10.2 15.71 10.68 15.71 10.97 16L11.45 16.48L13.05 15C13.36 14.72 13.83 14.74 14.11 15.04C14.39 15.34 14.37 15.81 14.07 16.1Z" fill="#292D32"/>
+            </svg>                                
+        </hmn-button>
+    </div>
+    <div id="sidebarSearchBlock">
+        <hmn-input placeholder="Search" v-model="filterText">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.4" d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z" fill="#292D32"/>
+                <path d="M21.3 22.0001C21.12 22.0001 20.94 21.9301 20.81 21.8001L18.95 19.9401C18.68 19.6701 18.68 19.2301 18.95 18.9501C19.22 18.6801 19.66 18.6801 19.94 18.9501L21.8 20.8101C22.07 21.0801 22.07 21.5201 21.8 21.8001C21.66 21.9301 21.48 22.0001 21.3 22.0001Z" fill="#292D32"/>
+            </svg>                
+        </hmn-input>
+    </div>
+    <div id="sidebarContentBlock">
+        <hmn-button text="Add column" class="primary" id="addColumnButton" @click="addColumnData">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.4" d="M16.19 2H7.81C4.17 2 2 4.17 2 7.81V16.18C2 19.83 4.17 22 7.81 22H16.18C19.82 22 21.99 19.83 21.99 16.19V7.81C22 4.17 19.83 2 16.19 2Z" fill="#292D32"/>
+                <path d="M16 11.25H12.75V8C12.75 7.59 12.41 7.25 12 7.25C11.59 7.25 11.25 7.59 11.25 8V11.25H8C7.59 11.25 7.25 11.59 7.25 12C7.25 12.41 7.59 12.75 8 12.75H11.25V16C11.25 16.41 11.59 16.75 12 16.75C12.41 16.75 12.75 16.41 12.75 16V12.75H16C16.41 12.75 16.75 12.41 16.75 12C16.75 11.59 16.41 11.25 16 11.25Z" fill="#292D32"/>
+            </svg>                                                              
+        </hmn-button>
+        <div id="sidebarContentBlockScrolledBlock">
+            <hmn-column v-for="(column, index) in filteredColumns" :key="index" :data="column"></hmn-column>
+            <hmn-no-result-block v-if="filteredColumns.length === 0"></hmn-no-result-block>
+        </div>
+        
+    </div>
+{% endblock %}
+
+{% block content %} 
+
+{% endblock %}
