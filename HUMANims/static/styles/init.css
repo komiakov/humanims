@@ -1,9 +1,0 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import "./lib/reset.css";
-@import "./variables.css";
-@import "./scroll.css";
-@import "./base.css";
-@import "./components/HmnButton.css";
-@import "./components/HmnInput.css";
-@import "./components/NoResultBlock.css";
-@import "./components/HmnColumn.css";
