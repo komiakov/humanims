@@ -76,3 +76,10 @@ select {
     scroll-behavior: auto !important;
   }
 }
+a{
+  display: inline-flex;
+  text-decoration: none;
+}
+*{
+  font-family: "Montserrat", serif;
+}

@@ -6,11 +6,12 @@ import HmnNoResultBlock from "./components/HmnNoResultBlock.js";
 
 const app = Vue.createApp({
     setup() {
-        const columnId = ref(1)
         const isSidebarVisible = ref(true);
         const toggleSidebar = () => {
             isSidebarVisible.value = !isSidebarVisible.value;
         };
+
+        const columnId = ref(1)
         const columnData = ref([{ 
             type: "Text", label: "New column " + columnId.value 
         },]);
@@ -20,12 +21,12 @@ const app = Vue.createApp({
                 type: "Text", label: "New column " + columnId.value  
             })
         }
-        const filterText = ref("");
 
+        const filterSearchCreatedColumn = ref("");
         const filteredColumns = computed(() => {
             return columnData.value.filter(column =>
-                column.type.toLowerCase().includes(filterText.value.toLowerCase()) ||
-                column.label.toLowerCase().includes(filterText.value.toLowerCase())
+                column.type.toLowerCase().includes(filterSearchCreatedColumn.value.toLowerCase()) ||
+                column.label.toLowerCase().includes(filterSearchCreatedColumn.value.toLowerCase())
             );
         });
 
@@ -35,7 +36,7 @@ const app = Vue.createApp({
             columnData,
             addColumnData,
             filteredColumns,
-            filterText,
+            filterSearchCreatedColumn,
         };
     },
     components: {

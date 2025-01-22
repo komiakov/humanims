@@ -1,0 +1,14 @@
+.no-results{
+    display: grid;justify-content: center; justify-items: center;
+    margin: auto;
+    svg{
+        width: 72px; height: 72px;
+        path{
+            fill: var(--main-dark-color)
+        }
+    }
+    span{
+        margin-top: 12px;
+        font-size: 18px; font-weight: 300; color: var(--main-font-color); opacity: 0.5;
+    }
+}
