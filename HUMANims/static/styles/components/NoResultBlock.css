@@ -1,6 +1,5 @@
 .no-results{
-    display: grid;justify-content: center; justify-items: center;
-    margin: auto;
+    
     svg{
         width: 72px; height: 72px;
         path{
