@@ -1,3 +1,7 @@
+<script setup lang="js">
+    
+</script>
+
 <template>
     <div id="app">
         <NavMenu></NavMenu>
