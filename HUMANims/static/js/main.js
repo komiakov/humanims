@@ -4,7 +4,7 @@ import HmnInput from "./components/HmnInput.js";
 import HmnColumn from "./components/HmnColumn.js";
 import HmnNoResultBlock from "./components/HmnNoResultBlock.js";
 
-const app = Vue.createApp({
+const app = createApp({
     setup() {
         const isSidebarVisible = ref(true);
         const toggleSidebar = () => {

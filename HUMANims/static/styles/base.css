@@ -60,8 +60,11 @@
 
         #sidebarContentBlock{
             max-height: 100%; overflow: hidden;
-            #addColumnButton{
-                width: 100%; display: flex; justify-content: center !important;
+            #sidebarContentBlockNav{
+                display: grid; gap: 12px;
+                #addColumnButton{
+                    width: 100%; display: flex; justify-content: center !important;
+                }
             }
             #sidebarContentBlockScrolledBlock{
                 display: grid; gap: 12px;
